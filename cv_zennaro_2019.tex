@@ -1,0 +1,192 @@
+%\title{Template for an unofficial Europass curriculum vitae}
+% !TEX encoding = UTF-8
+% !TEX program = pdflatex
+% !TEX spellcheck = en_EN
+
+% Europass curriculum vitae class
+% Author: Andrea Zennaro
+%
+% based on the europecv class by:
+% Nicola Vitacolonna (http://ctan.org/pkg/europecv)
+% Giacomo Mazzamuto (http://www.ctan.org/pkg/europasscv)
+
+% This material is subject to the LaTeX Project Public License Version 1.3.
+% See  http://www.latex-project.org/lppl.txt
+% for the details of that license
+
+\newif\ifenglish
+\newif\ifextraInfo
+
+%\englishtrue
+\englishfalse
+\extraInfotrue
+% \extraInfofalse
+
+\ifenglish
+  \documentclass[english,a4paper]{europasscv}
+\else
+  \documentclass[italian,a4paper]{europasscv}
+\fi
+
+\usepackage{import}
+\usepackage{comment}
+\usepackage{eurosym}
+\renewcommand\ThisComment[1]{%
+        \immediate\write\CommentStream{\unexpanded{#1}}%
+} 
+
+%----------------------------------------------------------------------------------------
+% SELECTOR FOR COMMENT PACKAGE
+%----------------------------------------------------------------------------------------
+% excludecomment means OFF
+% includecomment means ON
+\ifenglish
+    \includecomment{en} % Italian language
+    \excludecomment{it} % English language
+\else
+    \includecomment{it} % English language
+    \excludecomment{en} % Italian language
+\fi
+
+\ifextraInfo
+\includecomment{extraInfo} % To enable extra Additional Information and Annexes sections
+\else
+\excludecomment{extraInfo} % To enable extra Additional Information and Annexes sections
+\fi
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+\ecvname{Andrea Zennaro}
+\begin{en}
+\usepackage[english]{babel}
+\ecvaddress{Via Concordia,14 31100 -- Treviso (Italia)}
+%\ecvtelephone{+39 0422 1740026}
+%\ecvworkphone{+39 349 3400835} 
+\ecvmobile{+39 347 9812393}
+\ecvlinkedinpage{it.linkedin.com/in/andrea-zennaro-4654915}
+\ecvgender{Male}
+\ecvnationality{Italian}
+\ecvdateofbirth{30 January 1972}
+\end{en}
+\begin{it}
+\usepackage[italian]{babel}
+\ecvaddress{Via Concordia,14 31100 -- Treviso (Italia)}
+%\ecvtelephone{+39 0422 1740026}
+%\ecvworkphone{+39 349 3400835} 
+\ecvmobile{+39 347 9812393}
+\ecvlinkedinpage{it.linkedin.com/in/andrea-zennaro-4654915}
+\ecvgender{Maschile}
+\ecvnationality{Italiana}
+\ecvdateofbirth{30 gennaio 1972}
+\end{it}
+\ecvemail{andrea.zennaro@gmail.com}
+
+\ecvpicture[height=3.8cm]{Zennaro_Andrea.jpg}
+
+\begin{document}
+  \begin{europasscv}
+
+  \ecvpersonalinfo
+
+%----------------------------------------------------------------------------------------
+% JOB APPLIED FOR SECTION
+%----------------------------------------------------------------------------------------
+\begin{en}
+  \ecvbigitem{Job applied for}{IT Project Manager}
+  % Other headings available:
+  % Job applied for
+  % Position
+  % Preferred job
+  % Studies applied for
+  % Personal statement
+\end{en}
+    
+\begin{it}
+  \ecvbigitem{Occupazione desiderata}{IT Project Manager}
+  % Other headings available:
+  % Occupazione per la quale si concorre 
+  % Posizione ricoperta
+  % Occupazione desiderata
+  % Titolo di studio
+  % Dichiarazioni personali
+\end{it}
+
+%----------------------------------------------------------------------------------------
+% WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+\begin{en}
+    \import{sections/}{work-experience-en.tex}
+\end{en}
+
+\begin{it}
+    \import{sections/}{work-experience-it.tex}
+\end{it}
+  
+%----------------------------------------------------------------------------------------
+% EDUCATION AND TRAINING FOR SECTION
+%----------------------------------------------------------------------------------------
+\import{sections/}{education.tex}
+
+%----------------------------------------------------------------------------------------
+% PERSONAL SKILLS SECTION
+%----------------------------------------------------------------------------------------
+\import{sections/}{personalskills.tex}
+
+\begin{extraInfo}
+%----------------------------------------------------------------------------------------
+% ADDITIONAL INFORMATION FOR SECTION
+% Replace with relevant publications, presentations, projects, conferences, seminars,
+% honours and awards, memberships, references.
+%----------------------------------------------------------------------------------------
+\begin{en}
+\ecvsection{Additional information}
+\ecvitem[10pt]{Corsi frequentati}{
+\textbullet\hspace{5pt}Gennaio 2008 -- Corso di \textquotedblleft Leadership Generativa\textquotedblright{} della durata di 3 giorni sulle basi della comunicazione, i valori e la mission personale, stile di leadership e processo di delega, erogato da Comteam di Roma.\newline
+\textbullet\hspace{5pt}Aprile 2008  -- Corso di \textquotedblleft Tecniche di Comunicazione Efficace\textquotedblright{} della durata di 3 giorni sui seguenti argomenti: I principi della comunicazione, I tre livelli della comunicazione, Ascolto Attivo ed Empatia, I sistemi rappresentazionali, I segnali subliminali, Ricalco e Guida, erogato da Comteam di Roma.\newline
+\textbullet\hspace{5pt}Luglio 2008  -- Corso di \textquotedblleft Gestione dei Conflitti\textquotedblright{} della durata di 3 giorni sui seguenti temi: le origini del conflitto: lo scontro delle mappe, la risoluzione del conflitto riportando a livello conscio i 3 modellatori universali: generalizzazioni, distorsioni e cancellazioni, erogato da Comteam di Roma.\newline
+\textbullet\hspace{5pt}Dicembre 2008 -- Corso \textquotedblleft KnowHow Lab\textquotedblright{}, Seminario sui Metaprogrammi e la PNL (Programmazione Neuro--Linguistica) erogato da Comteam di Roma.
+}
+\end{en}
+
+\begin{it}
+\ecvsection{Ulteriori informazioni}
+\ecvitem[10pt]{Corsi frequentati}{
+\textbullet\hspace{5pt}Gennaio 2008 -- Corso di \textquotedblleft Leadership Generativa\textquotedblright{} della durata di 3 giorni sulle basi della comunicazione, i valori e la mission personale, stile di leadership e processo di delega, erogato da Comteam di Roma.\newline
+\textbullet\hspace{5pt}Aprile 2008  -- Corso di \textquotedblleft Tecniche di Comunicazione Efficace\textquotedblright{} della durata di 3 giorni sui seguenti argomenti: I principi della comunicazione, I tre livelli della comunicazione, Ascolto Attivo ed Empatia, I sistemi rappresentazionali, I segnali subliminali, Ricalco e Guida, erogato da Comteam di Roma.\newline
+\textbullet\hspace{5pt}Luglio 2008  -- Corso di \textquotedblleft Gestione dei Conflitti\textquotedblright{} della durata di 3 giorni sui seguenti temi: le origini del conflitto: lo scontro delle mappe, la risoluzione del conflitto riportando a livello conscio i 3 modellatori universali: generalizzazioni, distorsioni e cancellazioni, erogato da Comteam di Roma.\newline
+\textbullet\hspace{5pt}Dicembre 2008 -- Corso \textquotedblleft KnowHow Lab\textquotedblright{}, Seminario sui Metaprogrammi e la PNL (Programmazione Neuro--Linguistica) erogato da Comteam di Roma.
+}
+\end{it}
+
+%----------------------------------------------------------------------------------------
+% ANNEXES
+% Replace with list of documents annexed to your CV
+% (copies of degrees and qualifications, testimonial of employment or work placement, publications or research)
+%----------------------------------------------------------------------------------------
+
+\end{extraInfo}
+
+%----------------------------------------------------------------------------------------
+% PRIVACY LAW (only for Italian version)
+%----------------------------------------------------------------------------------------
+\begin{it}
+  \ecvblueitem[15pt]{}{Autorizzo il trattamento dei dati personali contenuti nel mio curriculum vitae in base all’art. 13 del D.Lgs. 196/2003 e all’art. 13 del Regolamento UE 2016/679 relativo alla protezione delle persone fisiche con riguardo al trattamento dei dati personali.}
+  
+  %\ecvsection{Legge Privacy}
+  %\ecvitem{Consenso al trattamento dei dati personali}{Il sottoscritto Zennaro Andrea autorizza all'utilizzo dei dati presenti in questo curriculum per soli scopi di selezione in virtù di quanto previsto dal Decreto legislativo 30 giugno 2003 n. 196.}
+\end{it}
+
+%\bibliographystyle{plain}
+%\nobibliography{publications}
+%\ecvitem{}{\textbf{Pubblicazioni}}
+%\ecvitem{}{\bibentry{pub1}}
+%\ecvitem[10pt]{}{\bibentry{pub2}}
+%\ecvitem{}{\textbf{Interessi personali}}
+%\ecvitem{}{\ldots}
+
+%\ecvsection{Allegati}
+%\ecvitem{}{Enumerare gli allegati al CV.}
+
+\end{europasscv}
+\end{document}
